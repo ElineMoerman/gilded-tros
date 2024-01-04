@@ -45,8 +45,6 @@ namespace GildedTros.App
                     case BackStagePassesForHAXX:
                         UpdateBackStagePasses(item);
                         break;
-                    case BDawgKeyChain:
-                        break;
                     default:
                         break;
                 }
