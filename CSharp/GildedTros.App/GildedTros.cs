@@ -101,5 +101,47 @@ namespace GildedTros.App
                 }
             }
         }
+
+        public static void UpdateNormalItem(Item item)
+        {
+            item.Quality = item.Quality > 0? item.Quality-- : 0;
+            item.SellIn--;
+        }
+
+        public static void UpdateGoodWine(Item item)
+        {
+            const int maxQuality = 50;
+            item.Quality = item.SellIn > 0 ? Math.Min(item.Quality ++ , maxQuality) : Math.Min(item.Quality + 2, maxQuality); ;
+            item.SellIn--;
+        }
+
+        public static void UpdateSmellyItems(Item item)
+        {
+            const int minQuality = 0;
+            item.Quality = item.SellIn > 0 ? Math.Max(item.Quality - 2, minQuality) : Math.Max(item.Quality - 4, minQuality);
+            item.SellIn--;
+        }
+
+        public static void UpdateBackStagePasses(Item item)
+        {
+            const int maxQuality = 50;
+
+            if (item.SellIn > 10)
+            {
+                item.Quality = Math.Min(item.Quality + 1, maxQuality);
+            }
+            else if (item.SellIn > 5)
+            {
+                item.Quality = Math.Min(item.Quality + 2, maxQuality);
+            }
+            else if (item.SellIn > 0)
+            {
+                item.Quality = Math.Min(item.Quality + 3, maxQuality);
+            }
+            else
+            {
+                item.Quality = 0;
+            }
+        }
     }
 }
