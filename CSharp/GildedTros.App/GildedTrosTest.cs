@@ -162,7 +162,7 @@ namespace GildedTros.App
             Assert.Equal(5, Items[1].Quality);
 
             Assert.Equal("Ugly Variable Names", Items[2].Name);
-            Assert.Equal(2, Items[2].SellIn);
+            Assert.Equal(-2, Items[2].SellIn);
             Assert.Equal(3, Items[2].Quality);
         }
     }
