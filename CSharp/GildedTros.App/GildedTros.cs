@@ -1,10 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace GildedTros.App
 {
     public class GildedTros
     {
         IList<Item> Items;
+        public static readonly IList<String> NormalItems = new ReadOnlyCollection<string>(
+            new List<String> { "Ring of Cleansening Code", "Elixir of the SOLID" });
+        public static readonly IList<String> SmellyItems = new ReadOnlyCollection<string>(
+            new List<String> { "Duplicate Code", "Long Methods", "Ugly Variable Names" });
+        public static readonly IList<String> BackstagePasses = new ReadOnlyCollection<string>(
+            new List<String> { "Backstage passes for Re:factor", "Backstage passes for HAXX" });
+        public const string GoodWine = "Good Wine";
+        public const string BDawgKeyChain = "B-DAWG Keychain";
+
         public GildedTros(IList<Item> Items)
         {
             this.Items = Items;
